@@ -37,15 +37,15 @@ services:
       - "9092"
     ports:
       - "9092:9092"
-      - "9093:9093"
+      #- "9093:9093"
     environment:
-      KAFKA_LISTENERS: INTERNAL://0.0.0.0:9093,EXTERNAL_SAME_HOST://0.0.0.0:9092
+      KAFKA_LISTENERS: INTERNAL://0.0.0.0:9093,EXTERNAL_SAME_HOST://:9092
       KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9093,EXTERNAL_SAME_HOST://localhost:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL_SAME_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: test_in:1:1,test_out:1:1 # Edit this to your liking
+      KAFKA_CREATE_TOPICS: test_in0:1:1,test_in1:1:1,test_out0:1:1,test_out1:1:1 # Edit this to your liking
     env_file:
       - env.list
     depends_on:
