@@ -26,3 +26,6 @@ In --mqtt-kafka-topic-mappings setting, source topic is the MQTT topic where the
 In --kafka-mqtt-topic-mappings it's the other way around.
 
 Either one or both of the settings must be set for the bridge to run. If both are set, you must make sure you don't make loops, or the bridge won't run.
+
+## Examples
+See [examples/fullstack](https://github.com/Potipecan/MQTT_Kafka_Bridge/tree/master/examples/fullstack).
